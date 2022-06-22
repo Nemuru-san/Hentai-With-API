@@ -25,39 +25,39 @@
 //     console.log(input);
 // }
 
-const searchAnime = document.getElementById("searchManga");
-const animeDisplay = document.getElementById("displayFact");
+// const searchAnime = document.getElementById("searchManga");
+// const animeDisplay = document.getElementById("displayFact");
 
-const search = async(e) => {
-    e.preventDefault();
-    var keyword = searchSong["searchInput"].value;
-    const response = await fetch(`https://anime-facts-rest-api.herokuapp.com/api/v1/${keyword}`, {
-        "method": "GET",
-    });
+// const search = async(e) => {
+//     e.preventDefault();
+//     var keyword = searchSong["searchInput"].value;
+//     const response = await fetch(`https://anime-facts-rest-api.herokuapp.com/api/v1/${keyword}`, {
+//         "method": "GET",
+//     });
 
-    if (response.status === 200) {
-        const resultResponse = await response.json();
-        if (resultResponse.meta.status === 200) {
-            animeDisplay.innerHTML = "";
-            resultResponse.response.hits.forEach(listSongs);
-        }
-    } else {
-        console.error("Terjadi kesalahan");
+//     if (response.status === 200) {
+//         const resultResponse = await response.json();
+//         if (resultResponse.meta.status === 200) {
+//             animeDisplay.innerHTML = "";
+//             resultResponse.response.hits.forEach(listSongs);
+//         }
+//     } else {
+//         console.error("Terjadi kesalahan");
 
-    }
+//     }
 
-}
+// }
 
-const listSongs = (e) => {
-    console.log(e);
-    animeDisplay.innerHTML += `
-    <div class="card-body">
-        <p class="card-text">${e.data.fact_id}</p>
-        <p class="card-text"> ${e.data.fact}</p>
-    </div>
-    `
-}
+// const listSongs = (e) => {
+//     console.log(e);
+//     animeDisplay.innerHTML += `
+//     <div class="card-body">
+//         <p class="card-text">${e.data.fact_id}</p>
+//         <p class="card-text"> ${e.data.fact}</p>
+//     </div>
+//     `
+// }
 
-searchAnime.addEventListener("click", function() {
-    search();
-});
+// searchAnime.addEventListener("click", function() {
+//     search();
+// });
