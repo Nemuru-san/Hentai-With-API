@@ -47,6 +47,11 @@ button {
     height: 400px;
 }
 
+.eror {
+    color: red;
+    text-transform: uppercase;
+}
+
 .card-body .tagNews {
     background-color: silver;
     border-radius: 10px;
